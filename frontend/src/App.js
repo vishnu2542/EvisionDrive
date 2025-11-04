@@ -64,7 +64,7 @@ function Home() {
         </form>
         <h3>{result}</h3>
       </div>
-      <div className="footer">© 2025 EVisionDrive by Vishnu Bansal</div>
+      <div className="footer">© 2025 EVisionDrive </div>
     </>
   );
 }
