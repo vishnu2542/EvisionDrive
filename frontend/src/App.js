@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./App.css"; // 👈 Import CSS file
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./Navbar";
+import About from "./About";
+import Contact from "./Contact";
+import "./App.css";
 
-export default function App() {
+function Home() {
   const [form, setForm] = useState({
     model: "NexaEV-100",
     battery_pct: 80,
@@ -19,12 +23,12 @@ export default function App() {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "https://evisiondrive.onrender.com/predict", // 🔗 your backend
+        "https://evision-drive-1.onrender.com/predict",
         form
       );
       setResult(`Estimated range: ${res.data.predicted_km.toFixed(2)} km`);
     } catch (err) {
-      setResult("internet connection problem");
+      setResult("Error connecting to backend or calculating.");
     }
   };
 
@@ -60,8 +64,20 @@ export default function App() {
         </form>
         <h3>{result}</h3>
       </div>
-
       <div className="footer">© 2025 EVisionDrive by Vishnu Bansal</div>
     </>
+  );
+}
+
+export default function App() {
+  return (
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </Router>
   );
 }
