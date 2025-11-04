@@ -1,0 +1,49 @@
+# ======= Node / React (Frontend) =======
+frontend/node_modules/
+frontend/build/
+frontend/.env
+frontend/.DS_Store
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+# ======= Python / Flask (Backend) =======
+backend/__pycache__/
+backend/venv/
+backend/*.pyc
+backend/*.pyo
+backend/*.pyd
+backend/.Python
+backend/env/
+backend/.env
+backend/.DS_Store
+backend/.pytest_cache/
+backend/instance/
+backend/.mypy_cache/
+backend/.coverage
+backend/htmlcov/
+
+# ======= General =======
+*.log
+*.sqlite3
+.DS_Store
+Thumbs.db
+
+# ======= System / IDE files =======
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+
+# ======= Build and cache =======
+dist/
+build/
+.cache/
+coverage/
+
+# ======= Misc =======
+*.pkl
+*.db
+*.sqlite
+.env
