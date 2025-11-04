@@ -23,7 +23,7 @@ function Home() {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "https://evision-drive-1.onrender.com/predict",
+        "https://evisiondrive.onrender.com/predict",
         form
       );
       setResult(`Estimated range: ${res.data.predicted_km.toFixed(2)} km`);
