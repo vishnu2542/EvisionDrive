@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./App.css"; // 👈 Import CSS file
 
 export default function App() {
   const [form, setForm] = useState({
@@ -17,9 +18,8 @@ export default function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // ⚠️ Change this URL after backend deployment
       const res = await axios.post(
-        "https://evisiondrive.onrender.com/predict",
+        "https://evision-drive-1.onrender.com/predict", // 🔗 your backend
         form
       );
       setResult(`Estimated range: ${res.data.predicted_km.toFixed(2)} km`);
@@ -29,37 +29,39 @@ export default function App() {
   };
 
   return (
-    <div style={{ maxWidth: 600, margin: "50px auto", fontFamily: "Arial" }}>
-      <h1>⚡ EVisionDrive Range Estimator</h1>
-      <form onSubmit={handleSubmit}>
-        <label>Vehicle Model:</label>
-        <select name="model" value={form.model} onChange={handleChange}>
-          <option>NexaEV-100</option>
-          <option>CityEV-50</option>
-          <option>WorkEV-200</option>
-        </select>
-        <br /><br />
-        <label>Battery %:</label>
-        <input
-          type="number"
-          name="battery_pct"
-          value={form.battery_pct}
-          onChange={handleChange}
-        />
-        <br /><br />
-        <label>Average Speed (km/h):</label>
-        <input
-          type="number"
-          name="avg_speed"
-          value={form.avg_speed}
-          onChange={handleChange}
-        />
-        <br /><br />
-        <button type="submit">Get Estimate</button>
-      </form>
-      <h3 style={{ marginTop: "20px" }}>{result}</h3>
-    </div>
+    <>
+      <div className="app-container">
+        <h1>⚡ EVisionDrive Range Estimator</h1>
+        <form onSubmit={handleSubmit}>
+          <label>Vehicle Model:</label>
+          <select name="model" value={form.model} onChange={handleChange}>
+            <option>NexaEV-100</option>
+            <option>CityEV-50</option>
+            <option>WorkEV-200</option>
+          </select>
+
+          <label>Battery %:</label>
+          <input
+            type="number"
+            name="battery_pct"
+            value={form.battery_pct}
+            onChange={handleChange}
+          />
+
+          <label>Average Speed (km/h):</label>
+          <input
+            type="number"
+            name="avg_speed"
+            value={form.avg_speed}
+            onChange={handleChange}
+          />
+
+          <button type="submit">Get Estimate</button>
+        </form>
+        <h3>{result}</h3>
+      </div>
+
+      <div className="footer">© 2025 EVisionDrive by Vishnu Bansal</div>
+    </>
   );
 }
-
-
