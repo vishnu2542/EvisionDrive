@@ -19,7 +19,7 @@ export default function App() {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "https://evision-drive-1.onrender.com/predict", // 🔗 your backend
+        "https://evisiondrive.onrender.com/predict", // 🔗 your backend
         form
       );
       setResult(`Estimated range: ${res.data.predicted_km.toFixed(2)} km`);
