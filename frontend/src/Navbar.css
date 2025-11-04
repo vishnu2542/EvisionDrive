@@ -33,3 +33,22 @@
   color: #00ffcc;
   text-shadow: 0 0 10px #00ffcc;
 }
+
+/* ===== Logo Styling (3D effect + glow) ===== */
+.logo-link {
+  color: #00e6ff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.6rem;
+  text-shadow: 0 0 10px #00e6ff, 0 0 20px #00e6ff;
+  display: inline-block;
+  transition: transform 0.4s ease, text-shadow 0.4s ease, color 0.4s ease;
+  perspective: 600px;
+}
+
+.logo-link:hover {
+  color: #00ffcc;
+  text-shadow: 0 0 15px #00ffcc, 0 0 30px #00ffcc, 0 0 45px #00ffcc;
+  transform: rotateY(12deg) scale(1.1);
+}
+

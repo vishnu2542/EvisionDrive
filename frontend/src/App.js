@@ -28,7 +28,7 @@ function Home() {
       );
       setResult(`Estimated range: ${res.data.predicted_km.toFixed(2)} km`);
     } catch (err) {
-      setResult("Error connecting to backend or calculating.");
+      setResult("check your internet connection");
     }
   };
 

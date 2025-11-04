@@ -25,8 +25,8 @@ export default function Contact() {
         <button type="submit">Send Message</button>
       </form>
       <p className="contact-info">
-        Email: <a href="mailto:vishnubansal2542@gmail.com">vishnubansal2542@gmail.com</a> <br />
-        LinkedIn: <a href="https://linkedin.com" target="_blank" rel="noreferrer">Your Profile</a>
+        Email: <a href="mailto:evdrive@gmail.com">evdrive@gmail.com</a> <br />
+        
       </p>
     </div>
   );

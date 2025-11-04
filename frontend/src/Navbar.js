@@ -5,7 +5,10 @@ import "./Navbar.css";
 export default function Navbar() {
   return (
     <nav className="navbar">
-      <div className="nav-logo">⚡ EVisionDrive</div>
+      <div className="nav-logo">
+        <Link to="/" className="logo-link">⚡ EVisionDrive</Link>
+      </div>
+
       <ul className="nav-links">
         <li><Link to="/">Home</Link></li>
         <li><Link to="/about">About</Link></li>
@@ -14,3 +17,4 @@ export default function Navbar() {
     </nav>
   );
 }
+
